@@ -1,5 +1,5 @@
 import { MAIN_FOOD } from '../data/MAIN_FOOD'
-import './mainFood.scss'
+import './MainFood.scss'
 
 const PlaceholderIcon = () => (
 	<svg
