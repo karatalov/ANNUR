@@ -52,7 +52,7 @@ const Footer = () => {
 						</p>
 
 						<div className="footer__contacts">
-							<a href="tel:+996123456789" className="footer__contact-link">
+							<a href="tel:+996990055355" className="footer__contact-link">
 								<svg
 									width="13"
 									height="13"
@@ -65,7 +65,7 @@ const Footer = () => {
 								>
 									<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 12 19.79 19.79 0 0 1 .08 3.38 2 2 0 0 1 2.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
 								</svg>
-								+996 123 456 789
+								+996 990 055 355
 							</a>
 							<a
 								href="mailto:info@tasteroyale.com"

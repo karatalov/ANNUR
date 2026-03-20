@@ -59,7 +59,7 @@ const Header = () => {
 					</nav>
 
 					<div className="header__actions">
-						<a href="tel:+996123456789" className="header__phone">
+						<a href="tel:+996990055355" className="header__phone">
 							<svg
 								width="16"
 								height="16"
@@ -78,7 +78,7 @@ const Header = () => {
                   0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
 								/>
 							</svg>
-							+996 123 456 789
+							+996 990 055 355
 						</a>
 					</div>
 
