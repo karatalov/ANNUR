@@ -26,13 +26,12 @@ const Pasta = () => (
 			<div className="pasta-rolls__header">
 				<p className="pasta-rolls__eyebrow">
 					<span />
-					Японская кухня
+					Европейская Кухня
 					<span />
 				</p>
-				<h2 className="pasta-rolls__title">Холодные роллы</h2>
+				<h2 className="pasta-rolls__title">Пасты</h2>
 				<p className="pasta-rolls__desc">
-					Свежайшие ингредиенты, рис собственного приготовления и мастерство
-					шеф-повара
+					Свежайшие ингредиенты, мастерство шеф-повара
 				</p>
 			</div>
 

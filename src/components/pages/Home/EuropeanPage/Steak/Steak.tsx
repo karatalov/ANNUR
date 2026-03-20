@@ -26,13 +26,12 @@ const Steak = () => (
 			<div className="steak-rolls__header">
 				<p className="steak-rolls__eyebrow">
 					<span />
-					Японская кухня
+					Европейская Кухня
 					<span />
 				</p>
-				<h2 className="steak-rolls__title">Холодные роллы</h2>
+				<h2 className="steak-rolls__title">Стейки</h2>
 				<p className="steak-rolls__desc">
-					Свежайшие ингредиенты, рис собственного приготовления и мастерство
-					шеф-повара
+					Свежайшие ингредиенты, мастерство шеф-повара
 				</p>
 			</div>
 

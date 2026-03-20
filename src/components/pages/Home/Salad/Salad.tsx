@@ -30,7 +30,7 @@ const Salad = () => (
 			<div className="salad-rolls__header">
 				<p className="salad-rolls__eyebrow">
 					<span />
-					Корейская кухня
+					Салаты
 					<span />
 				</p>
 				<p className="salad-rolls__desc">

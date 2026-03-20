@@ -26,13 +26,12 @@ const Breakfast = () => (
 			<div className="breakfast-rolls__header">
 				<p className="breakfast-rolls__eyebrow">
 					<span />
-					Японская кухня
+					Завтрак
 					<span />
 				</p>
-				<h2 className="breakfast-rolls__title">Холодные роллы</h2>
+				<h2 className="breakfast-rolls__title">Завтрак</h2>
 				<p className="breakfast-rolls__desc">
-					Свежайшие ингредиенты, рис собственного приготовления и мастерство
-					шеф-повара
+					Свежайшие ингредиенты, мастерство шеф-повара
 				</p>
 			</div>
 

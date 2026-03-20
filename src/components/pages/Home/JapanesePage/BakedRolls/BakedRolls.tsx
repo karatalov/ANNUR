@@ -29,7 +29,7 @@ const BakedRolls = () => (
 					Японская кухня
 					<span />
 				</p>
-				<h2 className="baked-rolls__title">Горячие роллы</h2>
+				<h2 className="baked-rolls__title">Запеченные роллы</h2>
 				<p className="baked-rolls__desc">
 					Свежайшие ингредиенты, рис собственного приготовления и мастерство
 					шеф-повара

@@ -26,13 +26,12 @@ const MainFood = () => (
 			<div className="mainFood-rolls__header">
 				<p className="mainFood-rolls__eyebrow">
 					<span />
-					Японская кухня
+					Европейская Кухня
 					<span />
 				</p>
-				<h2 className="mainFood-rolls__title">Холодные роллы</h2>
+				<h2 className="mainFood-rolls__title">Второе блюдо из говядины</h2>
 				<p className="mainFood-rolls__desc">
-					Свежайшие ингредиенты, рис собственного приготовления и мастерство
-					шеф-повара
+					Свежайшие ингредиенты, мастерство шеф-повара
 				</p>
 			</div>
 
