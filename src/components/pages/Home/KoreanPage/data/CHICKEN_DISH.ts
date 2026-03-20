@@ -1,0 +1,51 @@
+export const CHICKEN_DISH = [
+	{
+		id: 1,
+		name: 'Куриное филе в соусе',
+		image: '/koreanImages/c1.jpg',
+		gram: '450 г',
+		price: '550 с',
+	},
+	{
+		id: 2,
+		name: 'Курица в медовом соусе',
+		image: '/koreanImages/c2.jpg',
+		gram: '450 г',
+		price: '550 с',
+	},
+	{
+		id: 3,
+		name: 'Курица в сливочном соусе',
+		image: null,
+		gram: '450 г',
+		price: '580 с',
+	},
+	{
+		id: 4,
+		name: 'Таккоги Пульгоги',
+		image: null,
+		gram: '350 г',
+		price: '750 с',
+	},
+	{
+		id: 5,
+		name: 'Курица в кисло-сладком соусе',
+		image: null,
+		gram: '450 г',
+		price: '590 с',
+	},
+	{
+		id: 6,
+		name: 'Курица тонкацу',
+		image: null,
+		gram: '350 г',
+		price: '510 с',
+	},
+	{
+		id: 7,
+		name: 'Тори Терияки',
+		image: null,
+		gram: '400 г',
+		price: '490 с',
+	},
+]

@@ -1,0 +1,246 @@
+$deep: #0d0e1a;
+$card-bg: #141729;
+$gold: #c9a84c;
+$gold-light: #e8c97a;
+$gold-border: rgba(201, 168, 76, 0.2);
+$white: #ffffff;
+$muted: rgba(255, 255, 255, 0.45);
+$border: rgba(255, 255, 255, 0.07);
+$transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(22px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#tokboki-rolls {
+	background: $deep;
+	padding: 96px 0 112px;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(
+			ellipse 50% 35% at 50% 0%,
+			rgba(201, 168, 76, 0.07) 0%,
+			transparent 55%
+		);
+		pointer-events: none;
+	}
+}
+
+.tokboki-rolls__header {
+	text-align: center;
+	margin-bottom: 60px;
+	position: relative;
+	z-index: 1;
+}
+
+.tokboki-rolls__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: $gold;
+	margin: 0 0 14px;
+
+	span {
+		display: block;
+		width: 28px;
+		height: 1px;
+		background: rgba($gold, 0.5);
+	}
+}
+
+.tokboki-rolls__title {
+	font-size: clamp(30px, 4vw, 50px);
+	font-weight: 700;
+	color: $white;
+	margin: 0 0 12px;
+}
+
+.tokboki-rolls__desc {
+	font-size: 15px;
+	font-weight: 300;
+	color: $muted;
+	margin: 0 auto;
+	max-width: 460px;
+	line-height: 1.7;
+}
+
+.tokboki-rolls__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 18px;
+	position: relative;
+	z-index: 1;
+}
+
+.tokboki-rolls__card {
+	background: $card-bg;
+	border: 1px solid $border;
+	border-radius: 6px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	animation: fadeUp 0.55s $transition both;
+	animation-delay: calc(var(--i, 0) * 0.045s + 0.05s);
+	transition:
+		transform $transition,
+		border-color $transition,
+		box-shadow $transition;
+
+	&:hover {
+		transform: translateY(-5px);
+		border-color: $gold-border;
+		box-shadow:
+			0 14px 40px rgba(0, 0, 0, 0.4),
+			0 0 0 1px $gold-border;
+
+		.tokboki-rolls__img {
+			transform: scale(1.06);
+		}
+		.tokboki-rolls__name {
+			color: $gold-light;
+		}
+	}
+}
+
+.tokboki-rolls__img-wrap {
+	position: relative;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.03);
+}
+
+.tokboki-rolls__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.45s ease;
+}
+
+.tokboki-rolls__placeholder {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		stroke: rgba($gold, 0.3);
+	}
+}
+
+.tokboki-rolls__gram {
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(6px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 11px;
+	letter-spacing: 0.05em;
+	padding: 3px 8px;
+	border-radius: 20px;
+}
+
+.tokboki-rolls__body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 14px 14px 16px;
+}
+
+.tokboki-rolls__name {
+	font-size: 15px;
+	font-weight: 700;
+	color: $white;
+	margin: 0;
+	line-height: 1.35;
+	transition: color $transition;
+}
+
+.tokboki-rolls__price {
+	font-size: 18px;
+	font-weight: 700;
+	color: $gold;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+	.tokboki-rolls__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	#tokboki-rolls {
+		padding: 72px 0 80px;
+	}
+	.tokboki-rolls__header {
+		margin-bottom: 40px;
+	}
+	.tokboki-rolls__grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	#tokboki-rolls {
+		padding: 56px 0 64px;
+	}
+
+	.tokboki-rolls__grid {
+		grid-template-columns: 1fr;
+		max-width: 380px;
+		margin-inline: auto;
+		gap: 12px;
+	}
+
+	.tokboki-rolls__card {
+		flex-direction: row;
+		&:hover {
+			transform: translateX(4px) translateY(-2px);
+		}
+	}
+
+	.tokboki-rolls__img-wrap {
+		width: 100px;
+		min-width: 100px;
+		aspect-ratio: auto;
+		border-radius: 0;
+	}
+
+	.tokboki-rolls__body {
+		padding: 12px 14px;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 6px;
+	}
+
+	.tokboki-rolls__name {
+		font-size: 14px;
+	}
+	.tokboki-rolls__price {
+		font-size: 16px;
+	}
+}
