@@ -1,5 +1,5 @@
 import { SOUPS } from '../data/SOUPS'
-import './soups.scss'
+import './Soups.scss'
 
 const PlaceholderIcon = () => (
 	<svg
