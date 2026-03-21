@@ -52,17 +52,17 @@ const Hero = () => {
 					</p>
 
 					<div className="hero__btns" data-anim>
-						<a className="hero__btn hero__btn--primary">
+						<a href="#all-foods" className="hero__btn hero__btn--primary">
 							Открыть меню <MoveUpRight size={18} />
 						</a>
-						<a className="hero__btn hero__btn--outline">
+						<a href="#footer" className="hero__btn hero__btn--outline">
 							Местоположение <MoveUpRight size={18} />
 						</a>
 					</div>
 
 					<div className="hero__stats" data-anim>
 						<div className="hero__stat">
-							<span className="hero__stat-num">15+</span>
+							<span className="hero__stat-num">1+</span>
 							<span className="hero__stat-label">лет опыта</span>
 						</div>
 						<div className="hero__stat-divider" />
@@ -72,7 +72,7 @@ const Hero = () => {
 						</div>
 						<div className="hero__stat-divider" />
 						<div className="hero__stat">
-							<span className="hero__stat-num">4.9★</span>
+							<span className="hero__stat-num">5.0★</span>
 							<span className="hero__stat-label">рейтинг</span>
 						</div>
 					</div>
