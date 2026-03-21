@@ -7,6 +7,8 @@ $text: #1a1a2e;
 $muted: #6b6b8a;
 $border: rgba(22, 11, 63, 0.1);
 $transition: 0.28s ease;
+$whatsapp: #25d366;
+$whatsapp-dark: #1aab52;
 
 #header {
 	position: sticky;
@@ -48,7 +50,7 @@ $transition: 0.28s ease;
 				transform $transition;
 
 			&:hover {
-				border-color: $accent;
+				border-color: $deep-hover;
 				transform: scale(1.04);
 			}
 		}
@@ -129,22 +131,52 @@ $transition: 0.28s ease;
 		&__phone {
 			display: inline-flex;
 			align-items: center;
-			gap: 7px;
+			gap: 8px;
 			font-size: 16px;
 			font-weight: 400;
 			letter-spacing: 0.02em;
-			color: $muted;
+			color: $text;
 			text-decoration: none;
 			white-space: nowrap;
 			transition: color $transition;
 
 			svg {
 				flex-shrink: 0;
-				color: $accent;
+				color: $muted;
+				&:hover {
+					color: $accent;
+				}
 			}
 
 			&:hover {
-				color: $deep;
+				color: $text;
+			}
+		}
+
+		&__whatsapp {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background: rgba($whatsapp, 0.1);
+			color: $whatsapp-dark;
+			text-decoration: none;
+			flex-shrink: 0;
+			transition:
+				background $transition,
+				color $transition,
+				transform $transition;
+
+			svg {
+				flex-shrink: 0;
+			}
+
+			&:hover {
+				background: $whatsapp;
+				color: #fff;
+				transform: scale(1.08);
 			}
 		}
 

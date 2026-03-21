@@ -21,7 +21,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
 #set-rolls {
 	background: $deep;
-	padding: 96px 0 112px;
+	padding: 60px 0 100px;
 	position: relative;
 	overflow: hidden;
 
@@ -40,7 +40,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
 .set-rolls__header {
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 	position: relative;
 	z-index: 1;
 }
@@ -49,7 +49,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
-	font-size: 11px;
+	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
@@ -59,7 +59,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	span {
 		display: block;
 		width: 28px;
-		height: 1px;
+		height: 2px;
 		background: rgba($gold, 0.5);
 	}
 }
@@ -72,11 +72,11 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .set-rolls__desc {
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 300;
 	color: $muted;
 	margin: 0 auto;
-	max-width: 460px;
+	max-width: 650px;
 	line-height: 1.7;
 }
 
@@ -118,11 +118,14 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 }
 
+// ─── Image / Placeholder — одинаковая высота ──────────────────────────────────
 .set-rolls__img-wrap {
 	position: relative;
-	aspect-ratio: 4 / 3;
+	width: 100%;
+	aspect-ratio: 4 / 3; // фиксированное соотношение для ВСЕХ карточек
 	overflow: hidden;
 	background: rgba(255, 255, 255, 0.03);
+	flex-shrink: 0; // не сжимается
 }
 
 .set-rolls__img {
@@ -137,7 +140,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	width: 100%;
 	height: 100%;
 	display: flex;
-	align-items: center;
+	align-items: center; // иконка по центру
 	justify-content: center;
 
 	svg {
@@ -159,12 +162,12 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	border-radius: 20px;
 }
 
+// ─── Body ─────────────────────────────────────────────────────────────────────
 .set-rolls__body {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 8px;
-	padding: 14px 14px 16px;
+	flex-direction: column;
+	gap: 6px;
+	padding: 14px 14px 10px;
 }
 
 .set-rolls__name {
@@ -172,33 +175,43 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	font-weight: 700;
 	color: $white;
 	margin: 0;
-	line-height: 1.35;
+	line-height: 1.4;
+	word-break: break-word;
 	transition: color $transition;
 }
 
 .set-rolls__price {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 700;
 	color: $gold;
 	white-space: nowrap;
-	flex-shrink: 0;
+	align-self: flex-start;
 }
 
+// ─── Состав ───────────────────────────────────────────────────────────────────
 .set-rolls__rolls {
 	font-size: 12px;
-	font-weight: 500;
+	font-weight: 400;
 	color: $muted;
 	letter-spacing: 0.02em;
-	text-transform: capitalize;
-	padding: 0 14px 12px;
+	line-height: 1.65;
+	margin: 0;
+	padding: 8px 14px 40px;
+	border-top: 1px solid $border;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
+// ─── 3 cols ───────────────────────────────────────────────────────────────────
 @media (max-width: 1200px) {
 	.set-rolls__grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
+// ─── 2 cols ───────────────────────────────────────────────────────────────────
 @media (max-width: 768px) {
 	#set-rolls {
 		padding: 72px 0 80px;
@@ -212,6 +225,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 }
 
+// ─── 1 col horizontal ────────────────────────────────────────────────────────
 @media (max-width: 480px) {
 	#set-rolls {
 		padding: 56px 0 64px;
@@ -226,33 +240,37 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
 	.set-rolls__card {
 		flex-direction: row;
+		flex-wrap: wrap;
 		&:hover {
 			transform: translateX(4px) translateY(-2px);
 		}
 	}
 
 	.set-rolls__img-wrap {
-		width: 100px;
-		min-width: 100px;
-		aspect-ratio: auto;
+		width: 110px;
+		min-width: 110px;
+		aspect-ratio: auto; // на мобиле высота авто
+		height: 110px; // фиксируем высоту явно
 		border-radius: 0;
 	}
 
 	.set-rolls__body {
-		padding: 12px 14px;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		gap: 6px;
+		flex: 1;
+		padding: 12px 12px 8px;
+		gap: 4px;
 	}
 
 	.set-rolls__name {
-		font-size: 14px;
+		font-size: 13px;
 	}
 	.set-rolls__price {
 		font-size: 16px;
 	}
+
 	.set-rolls__rolls {
-		font-size: 8px;
+		flex: 0 0 100%;
+		padding: 8px 12px 30px;
+		font-size: 11px;
+		-webkit-line-clamp: 2;
 	}
 }

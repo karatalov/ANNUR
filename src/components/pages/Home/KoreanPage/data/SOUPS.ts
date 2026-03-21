@@ -1,7 +1,7 @@
 export const SOUPS = [
 	{
 		id: 1,
-		name: 'Рамен говядина',
+		name: 'Рамен Говядина',
 		image: '/koreanImages/s1.jpg',
 		gram: '450 г',
 		price: '550 с',
@@ -64,7 +64,7 @@ export const SOUPS = [
 	},
 	{
 		id: 10,
-		name: 'Суп пельмень по домашни',
+		name: 'Суп пельмени по домашнему',
 		image: null,
 		gram: '350 г',
 		price: '370 с',

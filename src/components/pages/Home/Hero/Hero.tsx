@@ -52,12 +52,12 @@ const Hero = () => {
 					</p>
 
 					<div className="hero__btns" data-anim>
-						<a href="#all-foods" className="hero__btn hero__btn--primary">
+						<a className="hero__btn hero__btn--primary">
 							Открыть меню <MoveUpRight size={18} />
 						</a>
-						<button className="hero__btn hero__btn--outline">
+						<a className="hero__btn hero__btn--outline">
 							Местоположение <MoveUpRight size={18} />
-						</button>
+						</a>
 					</div>
 
 					<div className="hero__stats" data-anim>

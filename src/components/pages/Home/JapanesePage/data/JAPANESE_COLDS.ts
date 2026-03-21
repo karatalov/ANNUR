@@ -1,4 +1,4 @@
-export const JAPANESE_FOODS = [
+export const JAPANESE_COLDS = [
 	{
 		id: 1,
 		name: 'Канада',
@@ -50,7 +50,7 @@ export const JAPANESE_FOODS = [
 	},
 	{
 		id: 8,
-		name: 'Ролл с Авакадо',
+		name: 'Ролл с Авокадо',
 		image: null,
 		gram: '240 г',
 		price: '580 с',

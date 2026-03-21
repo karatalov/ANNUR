@@ -1,32 +1,34 @@
 import { Route, Routes } from 'react-router-dom'
+import BreakfastPage from '../Home/BreakfastPage/BreakfastPage'
+import EuropeanPage from '../Home/EuropeanPage/EuropeanPage'
+import JapanesePage from '../Home/JapanesePage/JapanesePage'
+import ChickenDish from '../Home/KoreanPage/СhickenDish/СhickenDish'
+import DrinksPage from '../Home/DrinksPage/DrinksPage'
+import KoreanPage from '../Home/KoreanPage/KoreanPage'
+import BakedRolls from '../Home/JapanesePage/BakedRolls/BakedRolls'
+import ColdRolls from '../Home/JapanesePage/ColdRolls/ColdRolls'
+import HotSnacks from '../Home/KoreanPage/HotSnacks/HotSnacks'
+import Breakfast from '../Home/BreakfastPage/BreakfastPage'
+import Milkshake from '../Home/DrinksPage/Milkshake/Milkshake'
+import HotRolls from '../Home/JapanesePage/HotRolls/HotRolls'
+import SetRolls from '../Home/JapanesePage/SetRolls/SetRolls'
+import MainFood from '../Home/EuropeanPage/MainFood/MainFood'
+import Desserts from '../Home/Desert/Desert'
+import Tokboki from '../Home/KoreanPage/Tokboki/Tokboki'
+import Limonad from '../Home/DrinksPage/Limonad/Limonad'
+import Contact from '../Contact/Contact'
+import Kimbap from '../Home/KoreanPage/Kimbap/Kimbap'
+import Coffee from '../Home/DrinksPage/Coffee/Coffee'
 import Header from '../../layout/Header/Header'
 import Footer from '../../layout/Footer/Footer'
-import Home from '../Home/Home'
-import JapanesePage from '../Home/JapanesePage/JapanesePage'
-import KoreanPage from '../Home/KoreanPage/KoreanPage'
-import EuropeanPage from '../Home/EuropeanPage/EuropeanPage'
-import DrinksPage from '../Home/DrinksPage/DrinksPage'
-import BreakfastPage from '../Home/BreakfastPage/BreakfastPage'
-import ColdRolls from '../Home/JapanesePage/ColdRolls/ColdRolls'
-import HotRolls from '../Home/JapanesePage/HotRolls/HotRolls'
-import BakedRolls from '../Home/JapanesePage/BakedRolls/BakedRolls'
-import SetRolls from '../Home/JapanesePage/SetRolls/SetRolls'
-import Tokboki from '../Home/KoreanPage/Tokboki/Tokboki'
-import ChickenDish from '../Home/KoreanPage/СhickenDish/СhickenDish'
-import HotSnacks from '../Home/KoreanPage/HotSnacks/HotSnacks'
-import Kimbap from '../Home/KoreanPage/Kimbap/Kimbap'
 import Soups from '../Home/KoreanPage/Soups/Soups'
-import Pasta from '../Home/EuropeanPage/Pasta/Pasta'
-import MainFood from '../Home/EuropeanPage/MainFood/MainFood'
-import Steak from '../Home/EuropeanPage/Steak/Steak'
-import Breakfast from '../Home/BreakfastPage/BreakfastPage'
-import Coffee from '../Home/DrinksPage/Coffee/Coffee'
-import Tea from '../Home/DrinksPage/Tea/Tea'
-import Limonad from '../Home/DrinksPage/Limonad/Limonad'
-import Milkshake from '../Home/DrinksPage/Milkshake/Milkshake'
-import './Routes.scss'
 import Salad from '../Home/Salad/Salad'
-import Desserts from '../Home/Desert/Desert'
+import Pasta from '../Home/EuropeanPage/Pasta/Pasta'
+import Steak from '../Home/EuropeanPage/Steak/Steak'
+import About from '../About/About'
+import Home from '../Home/Home'
+import Tea from '../Home/DrinksPage/Tea/Tea'
+import './Routes.scss'
 
 const ROUTES = [
 	{ id: 1, path: '/', element: <Home /> },
@@ -54,6 +56,8 @@ const ROUTES = [
 	{ id: 23, path: '/drinks/kokteil', element: <Milkshake /> },
 	{ id: 24, path: '/salad', element: <Salad /> },
 	{ id: 25, path: '/desert', element: <Desserts /> },
+	{ id: 26, path: '/about', element: <About /> },
+	{ id: 27, path: '/contact', element: <Contact /> },
 ]
 
 const AppRoutes = () => (

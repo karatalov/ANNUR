@@ -22,14 +22,14 @@ export const JAPANESE_HOTS = [
 	},
 	{
 		id: 4,
-		name: 'Аннур-ролл',
+		name: 'ANNUR-ролл',
 		image: '/japaneseImages/h4.jpg',
 		gram: '250 г',
 		price: '650 с',
 	},
 	{
 		id: 5,
-		name: 'Ролл ekzo',
+		name: 'Ролл EKZO',
 		image: '/japaneseImages/h5.jpg',
 		gram: '250 г',
 		price: '520 с',
@@ -40,5 +40,12 @@ export const JAPANESE_HOTS = [
 		image: null,
 		gram: '260 г',
 		price: '480 с',
+	},
+	{
+		id: 7,
+		name: 'Горячие роллы с Креветками',
+		image: null,
+		gram: '270 г',
+		price: '530 с',
 	},
 ]

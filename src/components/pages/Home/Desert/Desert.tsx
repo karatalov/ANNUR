@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { DESSERTS } from './data/DESERT'
 import './Desert.scss'
 
@@ -20,49 +21,54 @@ const DessertIcon = () => (
 	</svg>
 )
 
-const Desserts = () => (
-	<section id="desserts">
-		<div className="container">
-			<div className="desserts__header">
-				<p className="desserts__eyebrow">
-					<span />
-					Сладкое
-					<span />
-				</p>
-				<h2 className="desserts__title">Десерты</h2>
-				<p className="desserts__desc">
-					Авторские пирожные, трайфлы и свежая фруктовая нарезка
-				</p>
-			</div>
-
-			<div className="desserts__section">
-				<div className="desserts__section-header">
-					<span className="desserts__section-icon">
-						<DessertIcon />
-					</span>
-					<h3 className="desserts__section-title">Десерты</h3>
-					<span className="desserts__section-line" />
+const Desserts = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
+	return (
+		<section id="desserts">
+			<div className="container">
+				<div className="desserts__header">
+					<p className="desserts__eyebrow">
+						<span />
+						Сладкое
+						<span />
+					</p>
+					<h2 className="desserts__title">Десерты</h2>
+					<p className="desserts__desc">
+						Авторские пирожные, трайфлы и свежая фруктовая нарезка
+					</p>
 				</div>
 
-				<ul className="desserts__list">
-					{DESSERTS.map((item, i) => (
-						<li
-							key={item.id}
-							className="desserts__item"
-							style={{ '--i': i } as React.CSSProperties}
-						>
-							<span className="desserts__item-name">{item.name}</span>
-							<span className="desserts__item-dots" aria-hidden="true" />
-							{item.gram && (
-								<span className="desserts__item-gram">{item.gram} кг</span>
-							)}
-							<span className="desserts__item-price">{item.price}</span>
-						</li>
-					))}
-				</ul>
+				<div className="desserts__section">
+					<div className="desserts__section-header">
+						<span className="desserts__section-icon">
+							<DessertIcon />
+						</span>
+						<h3 className="desserts__section-title">Десерты</h3>
+						<span className="desserts__section-line" />
+					</div>
+
+					<ul className="desserts__list">
+						{DESSERTS.map((item, i) => (
+							<li
+								key={item.id}
+								className="desserts__item"
+								style={{ '--i': i } as React.CSSProperties}
+							>
+								<span className="desserts__item-name">{item.name}</span>
+								<span className="desserts__item-dots" aria-hidden="true" />
+								{item.gram && (
+									<span className="desserts__item-gram">{item.gram} кг</span>
+								)}
+								<span className="desserts__item-price">{item.price}</span>
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
-		</div>
-	</section>
-)
+		</section>
+	)
+}
 
 export default Desserts

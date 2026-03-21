@@ -44,15 +44,14 @@ $transition: 0.32s ease;
 #hero {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 80vh;
 	display: flex;
 	align-items: center;
-	background-image: url('../../../../assets/heroImages/heroBG.png');
+	background-image: url('/heroImages/heroBG.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	overflow: hidden;
-	font-family: 'Jost', sans-serif;
 }
 
 .hero__overlay {
@@ -82,7 +81,7 @@ $transition: 0.32s ease;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: 1px;
+	width: 0px;
 	background: linear-gradient(
 		to bottom,
 		transparent 0%,
@@ -107,7 +106,7 @@ $transition: 0.32s ease;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	padding: 120px 0 80px;
+	padding: 80px 0;
 
 	[data-anim] {
 		opacity: 0;
@@ -123,7 +122,7 @@ $transition: 0.32s ease;
 	display: flex;
 	align-items: center;
 	gap: 14px;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
@@ -134,7 +133,8 @@ $transition: 0.32s ease;
 .hero__eyebrow-dash {
 	display: block;
 	width: 32px;
-	height: 1px;
+	height: 2px;
+	border-radius: 20px;
 	background: $gold;
 	opacity: 0.6;
 }
@@ -142,7 +142,7 @@ $transition: 0.32s ease;
 .hero__heading {
 	font-family: 'Playfair Display', serif;
 	font-size: clamp(64px, 11vw, 140px);
-	font-weight: 900;
+	font-weight: 800;
 	line-height: 0.9;
 	letter-spacing: -0.02em;
 	color: $white;
@@ -168,26 +168,25 @@ $transition: 0.32s ease;
 }
 
 .hero__sub {
-	font-size: 13px;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.35em;
 	text-transform: uppercase;
-	color: $muted;
+	color: $cream;
 	margin: 0 0 28px;
 }
 
 .hero__ornament {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: 16px;
 	color: $gold;
-	font-size: 18px;
+	font-size: 20px;
 	margin: 0 0 28px;
 
 	span {
 		display: block;
 		width: 48px;
-		height: 1px;
+		height: 2px;
 		background: linear-gradient(to right, transparent, $gold);
 
 		&:last-child {
@@ -209,9 +208,9 @@ $transition: 0.32s ease;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 16px;
+	gap: 20px;
 	flex-wrap: wrap;
-	margin-bottom: 56px;
+	margin-bottom: 20px;
 }
 
 .hero__btn {
@@ -219,7 +218,6 @@ $transition: 0.32s ease;
 	align-items: center;
 	gap: 8px;
 	padding: 14px 32px;
-	font-family: 'Jost', sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	letter-spacing: 0.08em;
@@ -257,18 +255,17 @@ $transition: 0.32s ease;
 .hero__stats {
 	display: flex;
 	align-items: center;
-	gap: 32px;
+	gap: 40px;
 }
 
 .hero__stat {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 4px;
+	gap: 6px;
 }
 
 .hero__stat-num {
-	font-family: 'Playfair Display', serif;
 	font-size: 28px;
 	font-weight: 700;
 	color: $gold;
@@ -277,15 +274,14 @@ $transition: 0.32s ease;
 
 .hero__stat-label {
 	font-size: 11px;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	color: $muted;
 }
 
-
 .hero__stat-divider {
-	width: 1px;
+	width: 2px;
 	height: 36px;
 	background: rgba(255, 255, 255, 0.15);
 }
@@ -303,7 +299,6 @@ $transition: 0.32s ease;
 		font-size: 15px;
 		max-width: 360px;
 	}
-	
 
 	.hero__stats {
 		gap: 20px;

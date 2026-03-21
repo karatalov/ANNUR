@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './KoreanPage.scss'
+import { useEffect } from 'react'
 
 const CATEGORIES = [
 	{
@@ -32,7 +33,7 @@ const CATEGORIES = [
 	{
 		id: 'korean',
 		path: '/koreanFoods/kimbap',
-		label: 'Кимпап',
+		label: 'Кимбап',
 		icon: (
 			<svg
 				viewBox="0 0 64 64"
@@ -141,6 +142,10 @@ const CATEGORIES = [
 
 const KoreanPage = () => {
 	const navigate = useNavigate()
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	return (
 		<section id="korean-page">
 			<div className="container">
@@ -150,6 +155,7 @@ const KoreanPage = () => {
 						Наше меню
 						<span />
 					</p>
+
 					<h2 className="korean-page__title">Выберите раздел</h2>
 				</div>
 

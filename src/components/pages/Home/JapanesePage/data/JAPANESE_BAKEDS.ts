@@ -8,7 +8,7 @@ export const JAPANESE_BAKEDS = [
 	},
 	{
 		id: 2,
-		name: 'Запечённый ролл с угрём и с крабом',
+		name: 'Запечённый ролл с Угрём и с Крабом',
 		image: '/japaneseImages/b2.jpg',
 		gram: '270 г',
 		price: '550 с',
@@ -22,14 +22,14 @@ export const JAPANESE_BAKEDS = [
 	},
 	{
 		id: 4,
-		name: 'Запечённый ролл майами',
+		name: 'Запечённый ролл MIAMI',
 		image: '/japaneseImages/b4.jpg',
 		gram: '250 г',
 		price: '580 с',
 	},
 	{
 		id: 5,
-		name: 'Запечённый ролл с ласасом',
+		name: 'Запечённый ролл с лососем',
 		image: null,
 		gram: '240 г',
 		price: '650 с',

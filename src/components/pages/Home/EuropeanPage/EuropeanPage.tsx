@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './EuropeanPage.scss'
+import { useEffect } from 'react'
 
 const CATEGORIES = [
 	{
@@ -78,6 +79,9 @@ const CATEGORIES = [
 
 const EuropeanPage = () => {
 	const navigate = useNavigate()
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	return (
 		<section id="european-page">
 			<div className="container">

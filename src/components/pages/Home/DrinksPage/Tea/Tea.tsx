@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { TEA } from '../data/TEA'
 import './Tea.scss'
 
@@ -31,6 +32,10 @@ const Tea = () => {
 		...s,
 		items: TEA.filter((t) => t.category === s.key),
 	}))
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
 	return (
 		<section id="tea">

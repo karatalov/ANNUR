@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './DrinksPage.scss'
+import { useEffect } from 'react'
 
 const CATEGORIES = [
 	{
@@ -94,6 +95,9 @@ const CATEGORIES = [
 
 const Drinks = () => {
 	const navigate = useNavigate()
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	return (
 		<section id="drinks-page">
 			<div className="container">

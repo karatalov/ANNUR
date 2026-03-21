@@ -21,7 +21,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
 #steak-rolls {
 	background: $deep;
-	padding: 96px 0 112px;
+	padding: 60px 0 100px;
 	position: relative;
 	overflow: hidden;
 
@@ -40,7 +40,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
 .steak-rolls__header {
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 	position: relative;
 	z-index: 1;
 }
@@ -49,7 +49,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
-	font-size: 11px;
+	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
@@ -59,7 +59,7 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 	span {
 		display: block;
 		width: 28px;
-		height: 1px;
+		height: 2px;
 		background: rgba($gold, 0.5);
 	}
 }
@@ -72,11 +72,11 @@ $transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .steak-rolls__desc {
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 300;
 	color: $muted;
 	margin: 0 auto;
-	max-width: 460px;
+	max-width: 650px;
 	line-height: 1.7;
 }
 

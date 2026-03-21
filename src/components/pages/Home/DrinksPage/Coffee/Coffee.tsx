@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { COFFEE } from '../data/COFFEE'
 import './Coffee.scss'
 
@@ -29,6 +30,10 @@ const Coffee = () => {
 		...s,
 		items: COFFEE.filter((c) => c.category === s.key),
 	}))
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
 	return (
 		<section id="coffee">
