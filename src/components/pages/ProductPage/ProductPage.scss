@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+$deep: #0b0d18;
+$card: #131628;
+$gold: #c9a84c;
+$gold-l: #e8c97a;
+$white: #ffffff;
+$muted: rgba(255, 255, 255, 0.45);
+$border: rgba(255, 255, 255, 0.07);
+$gold-b: rgba(201, 168, 76, 0.22);
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+$t: 0.35s $ease;
+
+.product-page {
+	background: $deep;
+	min-height: 100vh;
+	padding: 60px 0 120px;
+	position: relative;
+	overflow: hidden;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.pp-blob {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	filter: blur(110px);
+
+	&--1 {
+		width: 600px;
+		height: 400px;
+		background: radial-gradient(ellipse, rgba($gold, 0.07) 0%, transparent 70%);
+		top: -60px;
+		left: 30%;
+	}
+	&--2 {
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(
+			ellipse,
+			rgba(70, 40, 180, 0.06) 0%,
+			transparent 70%
+		);
+		bottom: -100px;
+		right: -60px;
+	}
+}
+
+.pp-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: transparent;
+	border: 1px solid $border;
+	border-radius: 50px;
+	color: $muted;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	padding: 7px 16px 7px 12px;
+	cursor: pointer;
+	margin-bottom: 48px;
+	transition:
+		color $t,
+		border-color $t;
+
+	&:hover {
+		color: $white;
+		border-color: rgba($white, 0.2);
+	}
+}
+
+.pp-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 72px;
+	align-items: center;
+	animation: ppFadeUp 0.65s $ease both;
+}
+
+.pp-img-wrap {
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	background: linear-gradient(145deg, #1a1e35, #0f1120);
+	border: 1px solid $border;
+	box-shadow:
+		inset 0 0 60px rgba($gold, 0.03),
+		0 24px 64px rgba(0, 0, 0, 0.5);
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 20px;
+		box-shadow: inset 0 0 0 1px rgba($gold, 0.06);
+		pointer-events: none;
+	}
+}
+
+.pp-img {
+	width: 100%;
+	display: block;
+	border-radius: 20px;
+	object-fit: cover;
+	transition: transform 0.7s $ease;
+
+	&:hover {
+		transform: scale(1.03);
+	}
+}
+
+.pp-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.pp-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 10px;
+	font-weight: 500;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: rgba($gold, 0.65);
+	margin: 0 0 18px;
+
+	span {
+		display: block;
+		width: 22px;
+		height: 1px;
+		background: rgba($gold, 0.35);
+	}
+}
+
+.pp-title {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: clamp(2rem, 3.5vw, 3rem);
+	font-weight: 700;
+	color: $white;
+	margin: 0 0 20px;
+	line-height: 1.1;
+	letter-spacing: -0.01em;
+}
+
+.pp-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 24px;
+}
+
+.pp-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 5px 14px;
+	border-radius: 50px;
+	border: 1px solid $border;
+	background: rgba($white, 0.04);
+	font-size: 13px;
+	font-weight: 400;
+	color: $muted;
+	letter-spacing: 0.04em;
+}
+
+.pp-desc {
+	font-size: 0.97rem;
+	font-weight: 300;
+	line-height: 1.8;
+	color: $muted;
+	margin: 0 0 36px;
+	border-left: 2px solid $gold-b;
+	padding-left: 16px;
+}
+
+.pp-price-row {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	padding-top: 28px;
+	border-top: 1px solid $border;
+}
+
+.pp-price {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 3rem;
+	font-weight: 700;
+	color: $gold;
+	line-height: 1;
+}
+
+.pp-currency {
+	font-size: 1rem;
+	font-weight: 400;
+	color: rgba($gold, 0.6);
+	letter-spacing: 0.05em;
+}
+
+.product-page__loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 8rem 0;
+	span {
+		font-size: 14px;
+		color: $muted;
+	}
+}
+
+.product-page__loader-ring {
+	width: 40px;
+	height: 40px;
+	border: 2px solid rgba($gold, 0.12);
+	border-top-color: $gold;
+	border-radius: 50%;
+	animation: ppSpin 0.9s linear infinite;
+}
+
+.product-page__empty {
+	text-align: center;
+	padding: 6rem 0;
+	p {
+		color: $muted;
+		font-size: 1.1rem;
+	}
+}
+
+@keyframes ppFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes ppSpin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 900px) {
+	.pp-wrapper {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+	.pp-title {
+		font-size: 2.2rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.product-page {
+		padding: 40px 0 80px;
+	}
+	.pp-back {
+		margin-bottom: 28px;
+	}
+	.pp-title {
+		font-size: 1.8rem;
+	}
+	.pp-price {
+		font-size: 2.4rem;
+	}
+}

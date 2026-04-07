@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+$deep: #0b0d18;
+$card: #131628;
+$card-h: #181d35;
+$gold: #c9a84c;
+$gold-l: #e8c97a;
+$white: #ffffff;
+$muted: rgba(255, 255, 255, 0.45);
+$border: rgba(255, 255, 255, 0.07);
+$gold-b: rgba(201, 168, 76, 0.25);
+$wa: #25d366;
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+$t: 0.35s $ease;
+
+#contact {
+	background: $deep;
+	min-height: 100vh;
+	padding: 80px 0 120px;
+	position: relative;
+	overflow: hidden;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.ct-blob {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	filter: blur(110px);
+
+	&--1 {
+		width: 650px;
+		height: 380px;
+		background: radial-gradient(ellipse, rgba($gold, 0.07) 0%, transparent 70%);
+		top: -60px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&--2 {
+		width: 420px;
+		height: 420px;
+		background: radial-gradient(
+			ellipse,
+			rgba(70, 40, 180, 0.05) 0%,
+			transparent 70%
+		);
+		bottom: -80px;
+		right: -60px;
+	}
+}
+
+.ct-header {
+	text-align: center;
+	margin-bottom: 64px;
+	animation: ctFadeUp 0.6s $ease both;
+}
+
+.ct-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: rgba($gold, 0.65);
+	margin: 0 0 20px;
+
+	span {
+		display: block;
+		width: 28px;
+		height: 1px;
+		background: rgba($gold, 0.35);
+	}
+}
+
+.ct-title {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: clamp(2.4rem, 5vw, 4rem);
+	font-weight: 700;
+	color: $white;
+	margin: 0 0 14px;
+	line-height: 1.1;
+}
+
+.ct-subtitle {
+	font-size: 1rem;
+	font-weight: 300;
+	color: $muted;
+	margin: 0;
+	line-height: 1.7;
+}
+
+.ct-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	gap: 24px;
+	max-width: 860px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+
+.ct-card {
+	background: $card;
+	border: 1px solid $border;
+	border-radius: 16px;
+	overflow: hidden;
+	padding: 32px;
+	animation: ctFadeUp 0.6s $ease both 0.1s;
+	position: relative;
+
+	&__top-line {
+		position: absolute;
+		top: 0;
+		left: 10%;
+		right: 10%;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba($gold, 0.5),
+			transparent
+		);
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+}
+
+.ct-link {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 16px 14px;
+	border-radius: 10px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	transition:
+		background $t,
+		border-color $t,
+		transform $t;
+	position: relative;
+
+	&:hover {
+		background: rgba($white, 0.04);
+		border-color: $border;
+		transform: translateX(4px);
+
+		.ct-link__arrow {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+		.ct-link__value {
+			color: $gold-l;
+		}
+	}
+
+	&--whatsapp {
+		.ct-link__icon {
+			color: $wa;
+			background: rgba($wa, 0.1);
+		}
+		&:hover {
+			border-color: rgba($wa, 0.2);
+			background: rgba($wa, 0.05);
+		}
+	}
+
+	&--insta {
+		.ct-link__icon {
+			color: #e1306c;
+			background: rgba(#e1306c, 0.1);
+		}
+		&:hover {
+			border-color: rgba(#e1306c, 0.2);
+			background: rgba(#e1306c, 0.04);
+		}
+	}
+
+	&__icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 10px;
+		background: rgba($white, 0.06);
+		color: rgba($gold, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		transition: background $t;
+	}
+
+	&__body {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+
+	&__label {
+		font-size: 11px;
+		font-weight: 400;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: $muted;
+	}
+
+	&__value {
+		font-size: 15px;
+		font-weight: 500;
+		color: $white;
+		transition: color $t;
+	}
+
+	&__arrow {
+		font-size: 16px;
+		color: $gold;
+		opacity: 0;
+		transform: translate(-4px, 4px);
+		transition:
+			opacity $t,
+			transform $t;
+		flex-shrink: 0;
+	}
+}
+
+.contact-loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 8rem 0;
+	span {
+		font-size: 14px;
+		color: $muted;
+	}
+
+	&__ring {
+		width: 40px;
+		height: 40px;
+		border: 2px solid rgba($gold, 0.12);
+		border-top-color: $gold;
+		border-radius: 50%;
+		animation: ctSpin 0.9s linear infinite;
+	}
+}
+
+@keyframes ctFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes ctSpin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 600px) {
+	#contact {
+		padding: 56px 0 80px;
+	}
+	.ct-grid {
+		grid-template-columns: 1fr;
+	}
+	.ct-card {
+		padding: 24px 20px;
+	}
+	.ct-header {
+		margin-bottom: 40px;
+	}
+}

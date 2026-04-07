@@ -1,0 +1,322 @@
+$deep: #0d0e1a;
+$deep2: #111327;
+$card-bg: #141729;
+$card-hover: #191e35;
+$gold: #c9a84c;
+$gold-light: #e8c97a;
+$white: #ffffff;
+$muted: rgba(255, 255, 255, 0.5);
+$border: rgba(255, 255, 255, 0.07);
+$gold-border: rgba(201, 168, 76, 0.3);
+$T: 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(32px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#japanese-page {
+	background: $deep;
+	min-height: 100vh;
+	padding: 72px 0 112px;
+	position: relative;
+	overflow: hidden;
+}
+
+.japanese-page__orb {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	filter: blur(80px);
+
+	&--1 {
+		width: 520px;
+		height: 520px;
+		background: radial-gradient(circle, rgba($gold, 0.07) 0%, transparent 70%);
+		top: -120px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&--2 {
+		width: 380px;
+		height: 380px;
+		background: radial-gradient(
+			circle,
+			rgba(80, 60, 200, 0.08) 0%,
+			transparent 70%
+		);
+		bottom: 0;
+		right: -80px;
+	}
+}
+
+.japanese-page__header {
+	text-align: center;
+	margin-bottom: 52px;
+}
+
+.japanese-page__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: $gold;
+	margin: 0 0 18px;
+
+	span {
+		display: block;
+		width: 32px;
+		height: 1px;
+		background: rgba($gold, 0.45);
+	}
+}
+
+.japanese-page__title {
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 600;
+	color: $white;
+	margin: 0;
+	letter-spacing: -0.01em;
+}
+
+.japanese-page__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.japanese-page__card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background: $card-bg;
+	border: 1px solid $border;
+	border-radius: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	transition:
+		transform $T,
+		box-shadow $T,
+		border-color $T,
+		background $T;
+
+	animation: fadeUp 0.55s $T both;
+	animation-delay: calc(var(--i, 0) * 0.08s + 0.05s);
+
+	&:hover {
+		background: $card-hover;
+		border-color: $gold-border;
+		transform: translateY(-8px);
+		box-shadow:
+			0 24px 56px rgba(0, 0, 0, 0.55),
+			0 0 0 1px $gold-border;
+
+		.japanese-page__card-glow {
+			opacity: 1;
+		}
+		.japanese-page__card-img {
+			transform: scale(1.07);
+		}
+		.japanese-page__card-img-overlay {
+			opacity: 0.55;
+		}
+		.japanese-page__card-title {
+			color: $gold-light;
+		}
+		.japanese-page__card-arrow {
+			transform: translateX(0);
+			opacity: 1;
+			background: $gold;
+			color: $deep;
+		}
+	}
+
+	&:active {
+		transform: translateY(-4px);
+	}
+}
+
+.japanese-page__card-glow {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 180px;
+	height: 100px;
+	background: radial-gradient(ellipse, rgba($gold, 0.14) 0%, transparent 70%);
+	opacity: 0;
+	transition: opacity $T;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.japanese-page__card-img-wrap {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.japanese-page__card-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.55s ease;
+}
+
+.japanese-page__card-img-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to bottom,
+		transparent 30%,
+		rgba($deep, 0.75) 100%
+	);
+	opacity: 0.4;
+	transition: opacity $T;
+}
+
+.japanese-page__card-body {
+	padding: 20px 20px 8px;
+	flex: 1;
+	position: relative;
+	z-index: 1;
+}
+
+.japanese-page__card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: $white;
+	margin: 0 0 8px;
+	line-height: 1.25;
+	transition: color $T;
+}
+
+.japanese-page__card-sub {
+	font-size: 0.8rem;
+	font-weight: 300;
+	line-height: 1.6;
+	color: $muted;
+	margin: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.japanese-page__card-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 20px 20px;
+	position: relative;
+	z-index: 1;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 20px;
+		right: 20px;
+		height: 1px;
+		background: $border;
+	}
+}
+
+.japanese-page__card-cta {
+	font-size: 0.72rem;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: rgba($gold, 0.7);
+}
+
+.japanese-page__card-arrow {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid $gold-border;
+	color: $gold;
+	opacity: 0.6;
+	transform: translateX(-6px);
+	transition:
+		transform $T,
+		opacity $T,
+		background $T,
+		color $T;
+	flex-shrink: 0;
+}
+
+.japanese-page__loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 60vh;
+}
+
+.japanese-page__spinner {
+	width: 40px;
+	height: 40px;
+	border: 2px solid rgba($gold, 0.15);
+	border-top-color: $gold;
+	border-radius: 50%;
+	animation: spin 0.8s linear infinite;
+}
+
+.japanese-page__empty {
+	color: $muted;
+	text-align: center;
+	padding: 6rem 0;
+	font-size: 1.1rem;
+}
+
+@media (max-width: 1100px) {
+	.japanese-page__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	#japanese-page {
+		padding: 56px 0 80px;
+	}
+	.japanese-page__grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	#japanese-page {
+		padding: 48px 0 64px;
+	}
+	.japanese-page__grid {
+		grid-template-columns: 1fr;
+		max-width: 360px;
+		margin: 0 auto;
+	}
+	.japanese-page__card-img-wrap {
+		aspect-ratio: 16 / 9;
+	}
+}
