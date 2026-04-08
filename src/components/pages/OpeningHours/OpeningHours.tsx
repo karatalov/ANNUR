@@ -6,14 +6,25 @@ import {
 } from '../../../entities/openingHours/api/openingHoursApi'
 import './OpeningHours.scss'
 
-const DAY_FULL: Record<string, string> = {
-	ПН: 'Понедельник',
-	ВТ: 'Вторник',
-	СР: 'Среда',
-	ЧТ: 'Четверг',
-	ПТ: 'Пятница',
-	СБ: 'Суббота',
-	ВС: 'Воскресенье',
+const DAY_FULL = {
+	ru: {
+		ПН: 'Понедельник',
+		ВТ: 'Вторник',
+		СР: 'Среда',
+		ЧТ: 'Четверг',
+		ПТ: 'Пятница',
+		СБ: 'Суббота',
+		ВС: 'Воскресенье',
+	},
+	ky: {
+		ПН: 'Дүйшөмбү',
+		ВТ: 'Шейшемби',
+		СР: 'Шаршемби',
+		ЧТ: 'Бейшемби',
+		ПТ: 'Жума',
+		СБ: 'Ишемби',
+		ВС: 'Жекшемби',
+	},
 }
 
 const DAY_INDEX: Record<string, number> = {
@@ -33,6 +44,21 @@ const OpeningHours = () => {
 
 	const todayIndex = new Date().getDay()
 
+	const t = {
+		ru: {
+			title: 'ВРЕМЯ РАБОТЫ',
+			today: 'Сегодня',
+			closed: 'Выходной',
+			loading: 'Загрузка...',
+		},
+		ky: {
+			title: 'ИШ УБАКТЫСЫ',
+			today: 'Бүгүн',
+			closed: 'Жабык',
+			loading: 'Жүктөлүүдө...',
+		},
+	}
+
 	useEffect(() => {
 		const fetchHours = async () => {
 			try {
@@ -51,7 +77,7 @@ const OpeningHours = () => {
 	if (loading)
 		return (
 			<div className="oh-wrap">
-				<div className="oh-loading">Загрузка...</div>
+				<div className="oh-loading">{t[lang].loading}</div>
 			</div>
 		)
 
@@ -66,16 +92,21 @@ const OpeningHours = () => {
 
 	return (
 		<div className="oh-wrap">
-			<h2 className="oh-title">ВРЕМЯ РАБОТЫ</h2>
+			<h2 className="oh-title">{t[lang].title}</h2>
+
 			<div className="oh-divider">
 				<span className="oh-line" />
 				<span className="oh-diamond" />
 				<span className="oh-line" />
 			</div>
+
 			<div className="oh-grid">
 				{cards.map((c, i) => {
 					const isToday = c.dayIndex === todayIndex
-					const isClosed = c.description === 'Выходной'
+
+					const isClosed =
+						c.description === 'Выходной' || c.description === 'Жабык'
+
 					return (
 						<div
 							key={c.key}
@@ -85,14 +116,19 @@ const OpeningHours = () => {
 							{isToday && (
 								<div className="oh-badge">
 									<span className="oh-dot oh-dot--open" />
-									Сегодня
+									{t[lang].today}
 								</div>
 							)}
-							<p className="oh-day">{DAY_FULL[c.day] ?? c.day}</p>
+
+							<p className="oh-day">
+								{DAY_FULL[lang][c.day as keyof (typeof DAY_FULL)['ru']] ??
+									c.day}
+							</p>
+
 							{isClosed ? (
 								<p className="oh-closed">
 									<span className="oh-dot oh-dot--closed" />
-									Выходной
+									{t[lang].closed}
 								</p>
 							) : (
 								<p className="oh-time">10:00 – 00:00</p>

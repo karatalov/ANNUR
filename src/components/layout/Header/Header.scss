@@ -20,12 +20,10 @@ $whatsapp-dark: #1aab52;
 	transition:
 		box-shadow $transition,
 		background $transition;
-
 	&.scrolled {
 		background: $bg-scroll;
 		box-shadow: 0 4px 32px rgba(22, 11, 63, 0.08);
 	}
-
 	.header__admin-btn {
 		padding: 6px 12px;
 		border: 1px solid $deep;
@@ -36,26 +34,22 @@ $whatsapp-dark: #1aab52;
 		letter-spacing: 0.08em;
 		text-decoration: none;
 		transition: 0.2s;
-
 		&:hover {
 			background: $deep;
 			color: #fff;
 		}
 	}
-
 	.header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 24px;
 		padding: 14px 0;
-
 		&__logo-link {
 			flex-shrink: 0;
 			display: block;
 			outline-offset: 4px;
 		}
-
 		&__logo {
 			width: 72px;
 			height: 72px;
@@ -65,19 +59,16 @@ $whatsapp-dark: #1aab52;
 			transition:
 				border-color $transition,
 				transform $transition;
-
 			&:hover {
 				border-color: $deep-hover;
 				transform: scale(1.04);
 			}
 		}
-
 		&__nav {
 			flex: 1;
 			display: flex;
 			justify-content: center;
 		}
-
 		&__nav-list {
 			display: flex;
 			align-items: center;
@@ -86,11 +77,9 @@ $whatsapp-dark: #1aab52;
 			margin: 0;
 			padding: 0;
 		}
-
 		&__nav-item {
 			position: relative;
 		}
-
 		&__nav-link {
 			position: relative;
 			display: flex;
@@ -104,22 +93,18 @@ $whatsapp-dark: #1aab52;
 			text-decoration: none;
 			padding: 4px 0;
 			transition: color $transition;
-
 			&:hover {
 				color: $deep;
 			}
-
 			&.active {
 				color: $deep;
 				font-weight: 500;
-
 				.header__nav-underline {
 					transform: scaleX(1);
 					background: $accent;
 				}
 			}
 		}
-
 		&__nav-underline {
 			display: block;
 			position: absolute;
@@ -133,18 +118,15 @@ $whatsapp-dark: #1aab52;
 			transform-origin: left center;
 			transition: transform $transition;
 		}
-
 		&__nav-link:hover &__nav-underline {
 			transform: scaleX(1);
 		}
-
 		&__actions {
 			display: flex;
 			align-items: center;
 			gap: 16px;
 			flex-shrink: 0;
 		}
-
 		&__phone {
 			display: inline-flex;
 			align-items: center;
@@ -156,12 +138,10 @@ $whatsapp-dark: #1aab52;
 			text-decoration: none;
 			white-space: nowrap;
 			transition: color $transition;
-
 			svg {
 				flex-shrink: 0;
 				color: $muted;
 			}
-
 			&:hover {
 				color: $deep;
 			}

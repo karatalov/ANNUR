@@ -6,10 +6,10 @@ import HeaderLogo from '/headerImages/header.png'
 import './Header.scss'
 
 const NAV_LINKS = [
-	{ to: '/', labelRu: 'Главная', labelKy: 'Башкы' },
+	{ to: '/', labelRu: 'Главная', labelKy: 'Башкы Бет' },
 	{ to: '/about', labelRu: 'О нас', labelKy: 'Биз жөнүндө' },
 	{ to: '/contact', labelRu: 'Контакты', labelKy: 'Байланыш' },
-	{ to: '/openingHours', labelRu: 'Время работы', labelKy: 'Иштоо убактысы' },
+	{ to: '/openingHours', labelRu: 'Время работы', labelKy: 'Иштөө убактысы' },
 ]
 
 const Header = () => {

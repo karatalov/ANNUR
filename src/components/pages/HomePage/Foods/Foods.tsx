@@ -13,7 +13,19 @@ const Foods = () => {
 
 	const [categories, setCategories] = useState<Category[]>([])
 	const [loading, setLoading] = useState(true)
-	console.log(categories)
+
+	const t = {
+		ru: {
+			menu: 'Наше меню',
+			choose: 'Выберите раздел',
+			loading: 'Загрузка...',
+		},
+		ky: {
+			menu: 'Биздин меню',
+			choose: 'Бөлүмдү тандаңыз',
+			loading: 'Жүктөлүүдө...',
+		},
+	}
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -35,15 +47,15 @@ const Foods = () => {
 				<div className="all-foods__header">
 					<p className="all-foods__eyebrow">
 						<span />
-						Наше меню
+						{t[lang].menu}
 						<span />
 					</p>
-					<h2 className="all-foods__title">Выберите раздел</h2>
+					<h2 className="all-foods__title">{t[lang].choose}</h2>
 				</div>
 
 				<div className="all-foods__grid">
 					{loading ? (
-						<p>Загрузка...</p>
+						<p>{t[lang].loading}</p>
 					) : (
 						categories.map((cat, i) => (
 							<button
@@ -60,9 +72,7 @@ const Foods = () => {
 										alt={cat.category_name}
 										width={64}
 										height={64}
-										style={{
-											borderRadius: '50%',
-										}}
+										style={{ borderRadius: '50%' }}
 									/>
 								</div>
 
