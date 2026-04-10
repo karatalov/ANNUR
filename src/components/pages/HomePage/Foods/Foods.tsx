@@ -11,6 +11,11 @@ const Foods = () => {
 	const navigate = useNavigate()
 	const { lang } = useLanguage()
 
+	const title = lang === 'ky' ? 'Суусундуктар' : 'Напитки'
+	const desc =
+		lang === 'ky'
+			? 'Автордук коктейлдер, чайлар жана сергитүүчү суусундуктар'
+			: 'Авторские коктейли, чаи и освежающие безалкогольные напитки'
 	const [categories, setCategories] = useState<Category[]>([])
 	const [loading, setLoading] = useState(true)
 
@@ -82,6 +87,26 @@ const Foods = () => {
 							</button>
 						))
 					)}
+					<button
+						className="all-foods__card"
+						onClick={() => navigate('/Drinks')}
+					>
+						<div className="all-foods__card-glow" />
+
+						<div className="all-foods__icon">
+							<img
+								src="/drink.jpg"
+								alt={title}
+								width={64}
+								height={64}
+								style={{ borderRadius: '50%' }}
+							/>
+						</div>
+
+						<h3 className="all-foods__card-title">{title}</h3>
+
+						<p className="all-foods__card-sub">{desc}</p>
+					</button>
 				</div>
 			</div>
 		</section>

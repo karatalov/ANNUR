@@ -9,6 +9,7 @@ import Category from '../HomePage/Category/Category'
 import SubCategoryPage from '../SubCategoryPage/SubCategoryPage'
 import ProductPage from '../ProductPage/ProductPage'
 import OpeningHours from '../OpeningHours/OpeningHours'
+import DrinksPage from '../DrinksPage/DrinksPage'
 
 const ROUTES = [
 	{ id: 1, path: '/', element: <HomePage /> },
@@ -18,6 +19,7 @@ const ROUTES = [
 	{ id: 5, path: '/contact', element: <ContactPage /> },
 	{ id: 6, path: '/product/:id', element: <ProductPage /> },
 	{ id: 7, path: '/openingHours', element: <OpeningHours /> },
+	{ id: 8, path: '/Drinks', element: <DrinksPage /> },
 ]
 
 const AppRoutes = () => (
