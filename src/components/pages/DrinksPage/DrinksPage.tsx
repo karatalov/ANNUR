@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './DrinksPage.scss'
 
 interface DrinkItem {
@@ -161,6 +161,10 @@ const DrinksPage = () => {
 	const [active, setActive] = useState<string>('coffee')
 
 	const activeSection = SECTIONS.find((s) => s.id === active)!
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
 	return (
 		<div className="drinks">

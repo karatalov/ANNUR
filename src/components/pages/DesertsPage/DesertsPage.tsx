@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './DesertsPage.scss'
 
 interface Dessert {
@@ -28,6 +29,9 @@ const DESSERTS: Dessert[] = [
 ]
 
 const DesertsPage = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	return (
 		<div className="deserts">
 			<div className="deserts__blob deserts__blob--1" aria-hidden="true" />
