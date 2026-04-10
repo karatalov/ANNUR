@@ -17,7 +17,7 @@ interface DrinkSection {
 const SECTIONS: DrinkSection[] = [
 	{
 		id: 'coffee',
-		title: 'Кофе',
+		title: 'Классические напитки',
 		emoji: '☕',
 		items: [
 			{ name: 'Doppio', volume: '80 мл', price: 180 },
@@ -36,7 +36,7 @@ const SECTIONS: DrinkSection[] = [
 	},
 	{
 		id: 'alt-milk',
-		title: 'Альтернативное молоко',
+		title: 'Альтернативные кофе',
 		emoji: '🌿',
 		items: [
 			{ name: 'Латте кокос', volume: '220 мл', price: 270 },
@@ -94,7 +94,7 @@ const SECTIONS: DrinkSection[] = [
 	},
 	{
 		id: 'soft',
-		title: 'Прохладительные напитки',
+		title: 'Освежающие напитки',
 		emoji: '🥤',
 		items: [
 			{ name: 'Coca-Cola', volume: '500 мл', price: 200 },
@@ -106,14 +106,12 @@ const SECTIONS: DrinkSection[] = [
 			{ name: 'Мин. вода с газом', volume: '1 л', price: 180 },
 			{ name: 'Натуральный сок J7', volume: '1 л', price: 280 },
 			{ name: 'Натуральный сок J7', volume: '200 мл', price: 100 },
-			{ name: 'Фреш-апельсин', volume: '250 мл', price: 380 },
-			{ name: 'Фреш-апельсин', volume: '1 л', price: 1300 },
 			{ name: 'Бал Кымыз', volume: '500 мл', price: 260 },
 		],
 	},
 	{
 		id: 'smoothie',
-		title: 'Смузи',
+		title: 'Холодные напитки',
 		emoji: '🧃',
 		items: [
 			{ name: 'Айс-Американо', volume: '400 мл', price: 250 },
@@ -153,6 +151,8 @@ const SECTIONS: DrinkSection[] = [
 			{ name: 'Мохито', volume: '1 л', price: 700 },
 			{ name: 'Мята-Маракуйя', volume: '1 л', price: 700 },
 			{ name: 'Ягодный', volume: '1 л' },
+			{ name: 'Фреш-апельсин', volume: '250 мл', price: 380 },
+			{ name: 'Фреш-апельсин', volume: '1 л', price: 1300 },
 		],
 	},
 ]
