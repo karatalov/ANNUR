@@ -1,0 +1,278 @@
+$deep: #0b0d18;
+$card: #131628;
+$gold: #c9a84c;
+$gold-l: #e8c97a;
+$rose: #c97c7c;
+$white: #ffffff;
+$muted: rgba(255, 255, 255, 0.4);
+$border: rgba(255, 255, 255, 0.06);
+$gold-b: rgba(201, 168, 76, 0.2);
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+$t: 0.32s $ease;
+
+.deserts {
+	background: $deep;
+	min-height: 100vh;
+	padding: 80px 0 140px;
+	position: relative;
+	overflow: hidden;
+}
+
+.deserts__blob {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	filter: blur(110px);
+
+	&--1 {
+		width: 600px;
+		height: 320px;
+		background: radial-gradient(ellipse, rgba($gold, 0.07) 0%, transparent 70%);
+		top: -60px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&--2 {
+		width: 380px;
+		height: 380px;
+		background: radial-gradient(ellipse, rgba($rose, 0.06) 0%, transparent 70%);
+		bottom: -80px;
+		left: -60px;
+	}
+	&--3 {
+		width: 300px;
+		height: 300px;
+		background: radial-gradient(
+			ellipse,
+			rgba(60, 30, 160, 0.05) 0%,
+			transparent 70%
+		);
+		top: 40%;
+		right: -40px;
+	}
+}
+
+.deserts__header {
+	text-align: center;
+	margin-bottom: 64px;
+	animation: dsFadeUp 0.6s $ease both;
+}
+
+.deserts__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: rgba($gold, 0.6);
+	margin: 0 0 18px;
+
+	span {
+		display: block;
+		width: 28px;
+		height: 1px;
+		background: rgba($gold, 0.35);
+	}
+}
+
+.deserts__title {
+	font-size: clamp(2.8rem, 6vw, 5rem);
+	font-weight: 700;
+	color: $white;
+	margin: 0 0 12px;
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+}
+
+.deserts__subtitle {
+	font-size: 0.95rem;
+	font-weight: 300;
+	font-style: italic;
+	color: $muted;
+	margin: 0;
+	font-size: 1.1rem;
+}
+
+.deserts__deco {
+	position: absolute;
+	top: 60px;
+	right: -20px;
+	font-size: 22vw;
+	font-weight: 700;
+	color: rgba($white, 0.015);
+	line-height: 1;
+	pointer-events: none;
+	user-select: none;
+	letter-spacing: -0.05em;
+}
+
+.deserts__list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 680px;
+	position: relative;
+	z-index: 1;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: -28px;
+		top: 0;
+		bottom: 0;
+		width: 1px;
+		background: linear-gradient(
+			to bottom,
+			transparent,
+			rgba($gold, 0.25) 20%,
+			rgba($gold, 0.25) 80%,
+			transparent
+		);
+	}
+}
+
+.deserts__item {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 15px 14px;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	cursor: default;
+	animation: dsFadeUp 0.45s $ease both;
+	animation-delay: calc(var(--i, 0) * 0.035s + 0.1s);
+	transition:
+		background $t,
+		border-color $t,
+		transform $t;
+	position: relative;
+
+	&:hover {
+		background: rgba($white, 0.03);
+		border-color: $border;
+		transform: translateX(6px);
+
+		.deserts__item-name {
+			color: $gold-l;
+		}
+		.deserts__item-num {
+			color: $gold;
+			opacity: 1;
+		}
+		.deserts__item-price {
+			color: $gold-l;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -31px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: $gold;
+			box-shadow: 0 0 10px rgba($gold, 0.6);
+		}
+	}
+
+	&:nth-child(even) {
+		background: rgba($white, 0.012);
+	}
+
+	&--no-price {
+		.deserts__item-name {
+			color: rgba($white, 0.55);
+		}
+	}
+
+	&-num {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: rgba($gold, 0.3);
+		opacity: 0.8;
+		min-width: 24px;
+		transition:
+			color $t,
+			opacity $t;
+		flex-shrink: 0;
+		letter-spacing: 0.04em;
+	}
+
+	&-name {
+		font-size: 15px;
+		font-weight: 400;
+		color: $white;
+		flex: 0 0 auto;
+		transition: color $t;
+		text-transform: capitalize;
+	}
+
+	&-dots {
+		flex: 1;
+		border-bottom: 1px dashed rgba($white, 0.09);
+		min-width: 16px;
+	}
+
+	&-price {
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: $gold;
+		white-space: nowrap;
+		min-width: 60px;
+		text-align: right;
+		transition: color $t;
+		flex-shrink: 0;
+
+		em {
+			font-style: normal;
+			font-size: 0.8rem;
+			font-weight: 400;
+			color: rgba($gold, 0.6);
+			margin-left: 2px;
+		}
+	}
+}
+
+@keyframes dsFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 768px) {
+	.deserts {
+		padding: 60px 0 100px;
+	}
+	.deserts__list::before {
+		display: none;
+	}
+	.deserts__deco {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.deserts__item {
+		padding: 12px 10px;
+		gap: 10px;
+	}
+	.deserts__item-num {
+		display: none;
+	}
+	.deserts__item-name {
+		font-size: 14px;
+	}
+	.deserts__item-price {
+		font-size: 1rem;
+		min-width: 50px;
+	}
+}

@@ -1,15 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
+import SubCategoryPage from '../SubCategoryPage/SubCategoryPage'
+import OpeningHours from '../OpeningHours/OpeningHours'
+import ContactPage from '../ContactPage/ContactPage'
+import ProductPage from '../ProductPage/ProductPage'
+import DesertsPage from '../DesertsPage/DesertsPage'
+import DrinksPage from '../DrinksPage/DrinksPage'
+import AboutPage from '../AboutPage/AboutPage'
+import Category from '../HomePage/Category/Category'
+import HomePage from '../HomePage/HomePage'
 import Header from '../../layout/Header/Header'
 import Footer from '../../layout/Footer/Footer'
 import './Routes.scss'
-import AboutPage from '../AboutPage/AboutPage'
-import ContactPage from '../ContactPage/ContactPage'
-import HomePage from '../HomePage/HomePage'
-import Category from '../HomePage/Category/Category'
-import SubCategoryPage from '../SubCategoryPage/SubCategoryPage'
-import ProductPage from '../ProductPage/ProductPage'
-import OpeningHours from '../OpeningHours/OpeningHours'
-import DrinksPage from '../DrinksPage/DrinksPage'
 
 const ROUTES = [
 	{ id: 1, path: '/', element: <HomePage /> },
@@ -20,6 +21,7 @@ const ROUTES = [
 	{ id: 6, path: '/product/:id', element: <ProductPage /> },
 	{ id: 7, path: '/openingHours', element: <OpeningHours /> },
 	{ id: 8, path: '/Drinks', element: <DrinksPage /> },
+	{ id: 8, path: '/Desserts', element: <DesertsPage /> },
 ]
 
 const AppRoutes = () => (

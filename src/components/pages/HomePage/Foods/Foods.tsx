@@ -11,26 +11,39 @@ const Foods = () => {
 	const navigate = useNavigate()
 	const { lang } = useLanguage()
 
-	const title = lang === 'ky' ? 'Суусундуктар' : 'Напитки'
-	const desc =
-		lang === 'ky'
-			? 'Автордук коктейлдер, чайлар жана сергитүүчү суусундуктар'
-			: 'Авторские коктейли, чаи и освежающие безалкогольные напитки'
-	const [categories, setCategories] = useState<Category[]>([])
-	const [loading, setLoading] = useState(true)
-
-	const t = {
+	const translations = {
 		ru: {
 			menu: 'Наше меню',
 			choose: 'Выберите раздел',
 			loading: 'Загрузка...',
+			drinks: {
+				title: 'Напитки',
+				desc: 'Авторские коктейли, чаи и освежающие безалкогольные напитки',
+			},
+			desserts: {
+				title: 'Десерты',
+				desc: 'Вкусные десерты для идеального завершения вашего дня',
+			},
 		},
 		ky: {
 			menu: 'Биздин меню',
 			choose: 'Бөлүмдү тандаңыз',
 			loading: 'Жүктөлүүдө...',
+			drinks: {
+				title: 'Суусундуктар',
+				desc: 'Автордук коктейлдер, чайлар жана сергитүүчү суусундуктар',
+			},
+			desserts: {
+				title: 'Таттуулар',
+				desc: 'Күндү сонун жыйынтыктоо үчүн даамдуу таттуулар',
+			},
 		},
 	}
+
+	const t = translations[lang] || translations.ru
+
+	const [categories, setCategories] = useState<Category[]>([])
+	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -52,15 +65,15 @@ const Foods = () => {
 				<div className="all-foods__header">
 					<p className="all-foods__eyebrow">
 						<span />
-						{t[lang].menu}
+						{t.menu}
 						<span />
 					</p>
-					<h2 className="all-foods__title">{t[lang].choose}</h2>
+					<h2 className="all-foods__title">{t.choose}</h2>
 				</div>
 
 				<div className="all-foods__grid">
 					{loading ? (
-						<p>{t[lang].loading}</p>
+						<p>{t.loading}</p>
 					) : (
 						categories.map((cat, i) => (
 							<button
@@ -87,25 +100,49 @@ const Foods = () => {
 							</button>
 						))
 					)}
+
+					{/* DRINKS */}
 					<button
 						className="all-foods__card"
-						onClick={() => navigate('/Drinks')}
+						onClick={() => navigate('/drinks')}
 					>
 						<div className="all-foods__card-glow" />
 
 						<div className="all-foods__icon">
 							<img
 								src="/drink.jpg"
-								alt={title}
+								alt={t.drinks.title}
 								width={64}
 								height={64}
 								style={{ borderRadius: '50%' }}
 							/>
 						</div>
 
-						<h3 className="all-foods__card-title">{title}</h3>
+						<h3 className="all-foods__card-title">{t.drinks.title}</h3>
 
-						<p className="all-foods__card-sub">{desc}</p>
+						<p className="all-foods__card-sub">{t.drinks.desc}</p>
+					</button>
+
+					{/* DESSERTS */}
+					<button
+						className="all-foods__card"
+						onClick={() => navigate('/Desserts')}
+					>
+						<div className="all-foods__card-glow" />
+
+						<div className="all-foods__icon">
+							<img
+								src="/desert.jpg"
+								alt={t.desserts.title}
+								width={64}
+								height={64}
+								style={{ borderRadius: '50%' }}
+							/>
+						</div>
+
+						<h3 className="all-foods__card-title">{t.desserts.title}</h3>
+
+						<p className="all-foods__card-sub">{t.desserts.desc}</p>
 					</button>
 				</div>
 			</div>

@@ -168,7 +168,6 @@ const DrinksPage = () => {
 			<div className="drinks__blob drinks__blob--2" aria-hidden="true" />
 
 			<div className="container">
-				{/* header */}
 				<header className="drinks__header">
 					<p className="drinks__eyebrow">
 						<span />
@@ -179,7 +178,6 @@ const DrinksPage = () => {
 					<p className="drinks__subtitle">Меню напитков нашего кафе</p>
 				</header>
 
-				{/* tab bar */}
 				<nav className="drinks__tabs" aria-label="Категории напитков">
 					{SECTIONS.map((s) => (
 						<button
@@ -193,7 +191,6 @@ const DrinksPage = () => {
 					))}
 				</nav>
 
-				{/* items list */}
 				<div className="drinks__panel" key={active}>
 					<h2 className="drinks__section-title">
 						{activeSection.emoji} {activeSection.title}
